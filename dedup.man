@@ -1,0 +1,51 @@
+
+.TH DEDUP "1" "May 2022" "dedup " "User Commands"
+.SH NAME
+dedup \- search for files with the same content
+.SH SYNOPSIS
+.B dedup
+[\fIoption\fR] \fIdirs\fR...
+
+.SH DESCRIPTION
+Utility for finding files with the same content
+and creating hard links to the first copy
+
+The utility is written to find duplicates in the archive of photos and videos.
+If when reading the next file the hash sum and size are the
+same as the previous one, it is considered a duplicate.
+File timestamps are not taken into account.
+
+To reduce the search time in a large archive you can specify
+to read only the first N bytes, usually different video
+files have different checksums already within the first 1Mb.
+If the file sizes are different, the file will also
+not be considered a duplicate.
+
+By default, only the listing is created.
+
+Existing hard link is not counted because it may lead outside
+the tree it is analyzing.
+
+.SH OPTIONS
+Usage: dedup [option] dirs...
+\fB\-bak\fR
+rename dumplicate before link
+.TP
+\fB\-depth int\fR
+maximal depth (default 5)
+.TP
+\fB\-limit int\fR
+read only first bytes (default "0b")
+.TP
+\fB\-max string\fR
+maximal size (default "1Gb")
+.TP
+\fB\-min string\fR
+minimal size (default "1kb")
+.TP
+\fB\-pat string\fR
+file name pattern (default "*")
+.SH EXIT STATUS
+\fB\dedup\fR
+exits with status 0 if all files are processed successfully,
+greater than 0 if errors occur.

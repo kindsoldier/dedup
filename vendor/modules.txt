@@ -1,0 +1,6 @@
+# github.com/minio/highwayhash v1.0.2
+## explicit; go 1.15
+github.com/minio/highwayhash
+# golang.org/x/sys v0.0.0-20190130150945-aca44879d564
+## explicit
+golang.org/x/sys/cpu

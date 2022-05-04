@@ -47,6 +47,10 @@ OPTIONS
        -pat string
               file name pattern (default "*")
 
+       -quiet supress listing
+
+       -stats print addtional stats
+
 EXIT STATUS
        edup  exits  with  status  0  if  all files are processed successfully,
        greater than 0 if errors occur.

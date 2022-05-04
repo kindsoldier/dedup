@@ -45,6 +45,14 @@ minimal size (default "1kb")
 .TP
 \fB\-pat string\fR
 file name pattern (default "*")
+.TP
+\fB\-quiet\fR
+supress listing
+.TP
+\fB\-stats\fR
+print addtional stats
+
+
 .SH EXIT STATUS
 \fB\dedup\fR
 exits with status 0 if all files are processed successfully,
